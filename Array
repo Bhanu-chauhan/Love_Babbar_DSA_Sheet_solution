@@ -1,4 +1,5 @@
-Reverse The Array 
+************************************************************************
+1. Reverse The Array 
 *************************************************************************
 import java.util.ArrayList;
 
@@ -20,3 +21,116 @@ public class Solution
     }
 }
 **************************************************************************
+2.Sum Of Max And Min
+**************************************************************************
+
+import java.util.*;
+public class Solution {
+  public static int sumOfMaxMin(int[] arr, int n) {
+     /* Arrays.sort(arr);
+      
+      return arr[0]+arr[arr.length-1];
+     */
+      int min=arr[0];
+      int max=arr[0];
+      for(int i=0;i<arr.length;i++)
+      {
+          if(max<arr[i])
+              max=arr[i];
+          if(min>arr[i])
+          {
+              min=arr[i];
+          }
+      }
+     // System.out.println(max+" "+min);
+      return max+min;
+  }
+}
+***************************************************************************
+3. Kth Smallest and Largest Element of Array 
+***************************************************************************
+import java.util.*;
+public class Solution {
+	public static ArrayList<Integer> kthSmallLarge(ArrayList<Integer> arr, int n, int k) {
+		Collections.sort(arr);
+        ArrayList<Integer> ans =
+        new ArrayList<Integer>(2);
+        ans.add(arr.get(k-1));
+        ans.add(arr.get(n-k));
+        
+        return ans;
+        
+	}
+}
+*****************************************************************************
+4.Sort 0 1 2
+*****************************************************************************
+import java.util.* ;
+import java.io.*; 
+public class Solution 
+{
+    public static void sort012(int[] arr)
+    {
+        int low=0;
+        int mid=0;
+        int high=arr.length-1;
+        int temp=0;
+        while(mid<=high)
+        {
+            if(arr[mid]==0)
+            {
+                temp=arr[low];
+                arr[low]=arr[mid];
+                arr[mid]=temp;
+                mid++;
+                low++;
+                
+            }
+            else if(arr[mid]==1)
+            {
+                mid++;
+            }
+            else{
+                temp=arr[mid];
+                arr[mid]=arr[high];
+                arr[high]=temp;
+                high--;
+                
+            }
+        }
+    }
+}
+********************************************************************************
+5. Move All Negative Numbers To Beginning And Positive To End 
+********************************************************************************
+import java.util.*;
+public class Solution {
+    public static ArrayList<Integer> separateNegativeAndPositive(ArrayList<Integer> nums) {
+       int low=0;
+        int high=nums.size()-1;
+        
+        while(low<high)
+        {
+            if(nums.get(high)>0)
+            {
+                high--;
+            }
+            else if(nums.get(low)<0)
+            {
+                low++;
+            }
+            else
+            {
+                int temp=nums.get(low);
+                nums.set(low,nums.get(high));
+                nums.set(high,temp);
+                
+                
+             }
+        }
+        return nums;
+    }
+}
+***********************************************************************************************
+6. 
+***********************************************************************************************
